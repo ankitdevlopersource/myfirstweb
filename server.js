@@ -29,7 +29,9 @@ app.set('views', path.join(__dirname, 'views'));
 // --- DATABASE CONNECTION ---
 // अपनी MongoDB Atlas की Connection String यहाँ डालें
 
-const dbURI = 'mongodb+srv://ankitkumardopta_db_user:Yadu0102@cluster0.l41ao65.mongodb.net/sarkariDb?retryWrites=true&w=majority&appName=Cluster0';
+// ...
+const dbURI = process.env.MONGODB_URI;
+// ...
 
 // Make sure to call the connect function
 mongoose.connect(dbURI)
@@ -83,7 +85,7 @@ app.post('/login', (req, res) => {
     
     // IMPORTANT: In a real app, you would check a database.
     // Here, we are using simple hardcoded values.
-    if (username === 'Ankityadu' && password === 'password123') {
+    if (username === 'Ankityadu' && password === 'password123@') {
         req.session.isLoggedIn = true; // Set the session
         res.redirect('/admin');
     } else {
