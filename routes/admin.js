@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router(); // <-- यह लाइन जोड़ें
-const Post = require('../models/post');
+const Post = require('../models/Post');
 
 // Admin Dashboard - सभी पोस्ट्स दिखाएगा
 router.get('/', async (req, res) => {

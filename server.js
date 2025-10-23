@@ -3,7 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const Post = require('./models/post');
+const Post = require('./models/Post');
 
 const app = express();
 const PORT = 3000;
@@ -32,8 +32,6 @@ app.set('views', path.join(__dirname, 'views'));
 // ...
 const dbURI = process.env.MONGODB_URI;
 // ...
-
-// Make sure to call the connect function
 mongoose.connect(dbURI)
     .then(() => {
         console.log('Database connected successfully');
