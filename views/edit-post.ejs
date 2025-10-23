@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+<style>
+    .form-container { padding: 20px; background-color: #fff; border-radius: 8px; }
+    form { display: flex; flex-direction: column; max-width: 600px; gap: 15px; }
+    form input, form select, form textarea, form button { padding: 10px; font-size: 1em; border-radius: 5px; border: 1px solid #ccc; }
+    form textarea { height: 250px; }
+    form button { background-color: #007bff; color: white; cursor: pointer; border: none; }
+</style>
+<div class="form-container">
+    <h2>Edit Post</h2>
+    <form action="/admin/edit/<%= post._id %>" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%= post.title %>" required>
+
+        <label for="content">Details (Blog Content):</label>
+        <textarea id="content" name="content" required><%= post.content %></textarea>
+
+        <label for="externalLink">External Link (Optional):</label>
+        <input type="text" id="externalLink" name="externalLink" value="<%= post.externalLink %>">
+        
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="New Updates" <%= post.category === 'New Updates' ? 'selected' : '' %>>New Updates</option>
+            <option value="Admit Card" <%= post.category === 'Admit Card' ? 'selected' : '' %>>Admit Card</option>
+            <option value="Latest Result" <%= post.category === 'Latest Result' ? 'selected' : '' %>>Latest Result</option>
+        </select>
+         <label>
+            <input type="checkbox" name="isNew" <%= post.isNew ? 'checked' : '' %>> Mark as New
+        </label>
+        <button type="submit">Update Post</button>
+    </form>
+</div>
+<%- include('partials/footer') %>

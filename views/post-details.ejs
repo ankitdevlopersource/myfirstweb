@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<div class="info-box">
+    <h1><%= post.title %></h1>
+    <p style="padding: 0 15px;"><i>Posted on: <%= new Date(post.createdAt).toLocaleDateString() %></i></p>
+    <hr>
+    <div class="post-content">
+        <%- post.content %>
+    </div>
+
+    <% if (post.externalLink) { %>
+        <a href="<%= post.externalLink %>" target="_blank" class="view-all-btn">Go to Official Website</a>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

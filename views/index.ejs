@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+
+<div class="main-content">
+    <div class="info-box">
+        <h2>New Updates</h2>
+        <ul>
+            <% newUpdates.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post._id %>">
+                        <%= post.title %>
+                        <% if (post.isNew) { %>
+                            <span class="new-badge">New</span>
+                        <% } %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h2>Admit Card</h2>
+        <ul>
+            <% admitCards.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post._id %>">
+                        <%= post.title %>
+                        <% if (post.isNew) { %>
+                            <span class="new-badge">New</span>
+                        <% } %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h2>Latest Result</h2>
+        <ul>
+            <% latestResults.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post._id %>">
+                        <%= post.title %>
+                         <% if (post.isNew) { %>
+                             <span class="new-badge">New</span>
+                        <% } %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

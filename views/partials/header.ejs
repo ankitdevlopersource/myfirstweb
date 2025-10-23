@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+      .admin-link {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          background-color: rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 8px 12px;
+          text-decoration: none;
+          border-radius: 5px;
+          font-size: 0.9em;
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <% if (isLoggedIn) { %>
+            <a href="/logout" class="admin-link">Logout</a>
+        <% } else { %>
+            <a href="/login" class="admin-link">Admin Login</a>
+        <% } %>
+        
+        <h1>Sarkari Exam AI</h1>
+        <p>AI द्वारा निर्मित - अपडेट सबसे पहले</p>
+    </header>
+<main class="container">

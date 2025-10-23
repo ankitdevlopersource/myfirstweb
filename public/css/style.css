@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.header {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header h1 { margin: 0; font-size: 2.5em; }
+.header p { margin: 5px 0 0; font-size: 1.1em; opacity: 0.9; }
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .main-content { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .main-content { grid-template-columns: repeat(3, 1fr); }
+}
+
+.info-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+    background-color: #2a5298;
+    color: white;
+    padding: 12px 15px;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.info-box ul { list-style-type: none; padding: 0; margin: 0; }
+.info-box li { padding: 12px 15px; border-bottom: 1px solid #eee; font-size: 0.95em; }
+.info-box li:last-child { border-bottom: none; }
+.info-box li a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-box li a:hover { color: #1e3c72; }
+
+.new-badge {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 0.7em;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.5; } }
+
+.view-all-btn {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin: 15px;
+}
+.view-all-btn:hover { background-color: #0056b3; }
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.post-content { line-height: 1.8; padding: 15px; white-space: pre-wrap; }
+.post-content h3 { font-size: 1.5em; }
